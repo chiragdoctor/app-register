@@ -1,0 +1,29 @@
+{
+  "name": "app-register",
+  "version": "1.0.0",
+  "description": "This is an angularjs based app running on node server.",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiragdoctor/app-register.git"
+  },
+  "author": "Chirag Doctor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chiragdoctor/app-register/issues"
+  },
+  "homepage": "https://github.com/chiragdoctor/app-register#readme",
+  "dependencies": {
+    "config": "^1.25.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.1",
+    "mongoose": "^4.8.4",
+    "morgan": "^1.8.1"
+  },
+  "devDependencies": {
+    "ejs": "^2.5.6"
+  }
+}
