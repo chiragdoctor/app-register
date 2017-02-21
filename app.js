@@ -21,6 +21,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'layouts')));
 
 
+//// Registing routes.
+app.use(require('./routes'));
+
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
