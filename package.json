@@ -4,7 +4,8 @@
   "description": "This is an angularjs based app running on node server.",
   "main": "server.js",
   "scripts": {
-    "test": "npm test"
+    "start": "node server",
+    "test": "mocha ../app-register/tests/server/api"
   },
   "repository": {
     "type": "git",
@@ -17,15 +18,23 @@
   },
   "homepage": "https://github.com/chiragdoctor/app-register#readme",
   "dependencies": {
+    "bluebird": "^3.4.7",
     "config": "^1.25.1",
     "cookie-parser": "^1.4.3",
     "express": "^4.14.1",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^4.0.1",
+    "gulp-nodemon": "^2.2.1",
     "mongoose": "^4.8.4",
-    "morgan": "^1.8.1"
-  },
-  "devDependencies": {
+    "morgan": "^1.8.1",
+    "should": "^11.2.0",
+    "sinon": "^1.17.7",
     "body-parser": "^1.16.1",
     "ejs": "^2.5.6",
     "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "gulp-env": "^0.4.0",
+    "supertest": "^3.0.0"
   }
 }

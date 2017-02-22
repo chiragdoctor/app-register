@@ -1,12 +1,9 @@
 'use strict'
 
 var router = require('express').Router();
-var bodyParser = require('body-parser');
+var User = require('./../models/user');
 
-router.use(bodyParser.json());
-router.use(bodyParser.urlencoded({extended: false}));
-
-router.use('/api', require('../routes/api/signup'));
-
+var signupRoutes = require('../routes/api/signup')(User);
+router.use('/api/signup', signupRoutes);
 
 module.exports = router;

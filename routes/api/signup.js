@@ -1,11 +1,15 @@
 'use strict';
 var express = require('express');
-var app = express.Router();
+var bookRouter = express.Router();
 var _ = require('lodash');
 
+var routes = function (User) {
+    var signupController = require('./../../controllers/signupController')(User);
+    bookRouter.route('/')
+            .post(signupController.saveUser);
+    return bookRouter;
+};
 
-app.get('/signup', function (req, res, done) {
-    res.send('All ok!!.. I can see signup response');
-});
 
-module.exports = app;
+
+module.exports = routes;

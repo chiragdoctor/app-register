@@ -4,6 +4,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var config = require('config');
 var path = require('path');
 require('./services/db').connect();
@@ -17,12 +18,18 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(cookieParser());
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'layouts')));
 
 
 //// Registing routes.
-app.use(require('./routes'));
+var IndexRoutes = require('./routes');
+app.use(IndexRoutes);
 
 
 // catch 404 and forward to error handler
