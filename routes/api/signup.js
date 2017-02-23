@@ -1,13 +1,13 @@
 'use strict';
 var express = require('express');
-var bookRouter = express.Router();
+var signupRouter = express.Router();
 var _ = require('lodash');
 
 var routes = function (User) {
     var signupController = require('./../../controllers/signupController')(User);
-    bookRouter.route('/')
+    signupRouter.route('/')
             .post(signupController.saveUser);
-    return bookRouter;
+    return signupRouter;
 };
 
 

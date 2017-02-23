@@ -28,6 +28,15 @@ app.use(express.static(path.join(__dirname, 'layouts')));
 
 
 //// Registing routes.
+
+app.get('/partials/:partialPath', function (req, res) {
+    res.render('partials/' + req.params.partialPath);
+});
+
+app.get('*', function (req, res) {
+    res.render('index');
+});
+
 var IndexRoutes = require('./routes');
 app.use(IndexRoutes);
 

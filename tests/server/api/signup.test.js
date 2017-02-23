@@ -8,11 +8,8 @@ var should = require('should'),
 
 
 describe('Signup user test', function () {
-
     describe('/api/signup', function () {
-
         var testUser = { name: 'Chirag', age: 31, sex: 'Male', country: 'United Kingdom' };
-
         it('should create user', function (done) {
             agent.post('/api/signup')
                 .send(testUser)
@@ -26,6 +23,6 @@ describe('Signup user test', function () {
         afterEach(function (done) {
             User.remove().exec();
             done();
-        })
+        });
     });
 });
